@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TruckStop Z-463 · Бонусный фонд · TV (cream)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet" />
+<style>
+:root{
+  --bg:          oklch(0.965 0.013 75);
+  --bg-1:        oklch(0.945 0.018 70);
+  --bg-2:        oklch(0.91 0.022 65);
+  --bg-card:     oklch(0.985 0.007 75);
+  --fg:          oklch(0.20 0.018 50);
+  --fg-2:        oklch(0.42 0.018 50);
+  --fg-3:        oklch(0.58 0.018 55);
+  --fg-4:        oklch(0.74 0.015 60);
+  --accent:      oklch(0.58 0.14 30);
+  --accent-deep: oklch(0.48 0.16 28);
+  --accent-soft: oklch(0.82 0.10 30);
+  --sage:        oklch(0.82 0.08 145);
+  --sage-deep:   oklch(0.45 0.10 145);
+  --butter:      oklch(0.88 0.10 90);
+  --butter-deep: oklch(0.55 0.10 90);
+  --blue:        oklch(0.82 0.06 240);
+  --blue-deep:   oklch(0.45 0.08 240);
+  --coral:       oklch(0.82 0.10 30);
+  --rule:        oklch(0.85 0.015 60);
+  --rule-2:      oklch(0.72 0.020 55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"Inter Tight",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1,"ss01" 1;
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+
+.tv{
+  height:100vh;
+  display:flex;flex-direction:column;
+  padding:1.8vh 2.2vw;
+  gap:1.1vh;
+}
+.tv > *{flex-shrink:0}
+.emp-section{flex:1;min-height:0}
+
+/* HEADER */
+.head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:0.7vh;
+}
+.head .l{display:flex;align-items:center;gap:1.2vw}
+.head .mark{
+  width:1.3vw;height:1.3vw;background:var(--accent);
+  border-radius:50%;flex-shrink:0;
+}
+.head .brand{font-size:1.35vw;font-weight:700;letter-spacing:-0.005em}
+.head .sub{
+  font-size:0.85vw;color:var(--fg-2);
+  letter-spacing:0.16em;text-transform:uppercase;font-weight:500;
+}
+.head .r{display:flex;gap:2vw;align-items:center;font-size:0.88vw}
+.head .stat{color:var(--fg-2);display:flex;align-items:center;gap:0.5vw}
+.head .stat b{color:var(--fg);font-weight:600}
+.pulse{
+  width:0.6vw;height:0.6vw;border-radius:50%;
+  background:var(--sage-deep);position:relative;display:inline-block;
+}
+.pulse::after{
+  content:"";position:absolute;inset:-0.3vw;
+  border-radius:50%;background:var(--sage-deep);opacity:0.45;
+  animation:pulse 2.2s cubic-bezier(0.16,1,0.3,1) infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(0.4);opacity:0.55}
+  100%{transform:scale(1.85);opacity:0}
+}
+
+/* ECONOMICS RIBBON */
+.econ{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  background:var(--bg-1);
+  border:1px solid var(--rule);
+}
+.econ .e{
+  padding:0.7vh 1.2vw;
+  border-right:1px solid var(--rule);
+  display:flex;flex-direction:column;gap:0.1vh;
+}
+.econ .e:last-child{border-right:none}
+.econ .e .k{
+  font-size:0.7vw;color:var(--fg-3);
+  letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+}
+.econ .e .v{font-size:1.22vw;font-weight:700;letter-spacing:-0.015em;color:var(--fg)}
+.econ .e.delta .v{color:var(--accent-deep)}
+
+/* STAGE PILLS — horizontal full-width navigation */
+.stages{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:0.5vw;
+}
+.tile{
+  background:var(--bg-card);
+  border:1px solid var(--rule);
+  padding:0.9vh 1vw;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:8.5vh;
+  position:relative;
+}
+.tile .num{
+  font-size:1.65vw;font-weight:700;letter-spacing:-0.025em;line-height:1;
+}
+.tile .label{
+  font-size:0.72vw;color:var(--fg-3);
+  letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+  margin-top:0.3vh;
+}
+.tile .rate{
+  font-size:0.95vw;font-weight:700;
+  color:var(--fg);letter-spacing:-0.005em;margin-top:auto;
+}
+.tile.current{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--bg);
+}
+.tile.current .num{font-weight:800;font-size:1.95vw}
+.tile.current .label,
+.tile.current .rate{color:var(--bg)}
+
+/* HERO */
+.hero{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:3vw;padding:0.5vh 0 0.5vh;
+}
+.bf-block{display:flex;flex-direction:column}
+.bf-label{
+  font-size:0.82vw;color:var(--fg-3);font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.7vh;
+}
+.bf-number{
+  font-size:11.5vw;font-weight:800;letter-spacing:-0.05em;
+  line-height:0.85;color:var(--fg);
+}
+.bf-number .cur{
+  font-size:5vw;font-weight:500;color:var(--fg-2);
+  margin-left:0.9vw;letter-spacing:-0.02em;
+}
+.bf-foot{
+  margin-top:1.3vh;display:flex;gap:2.5vw;
+  font-size:1.05vw;color:var(--fg-2);
+}
+.bf-foot b{color:var(--fg);font-weight:700}
+.bf-foot .delta b{color:var(--accent-deep)}
+
+.hero-aside{
+  display:flex;flex-direction:column;align-items:flex-end;
+  text-align:right;gap:0.2vh;padding-bottom:1vh;
+}
+.hero-aside .ksmall{
+  font-size:0.78vw;color:var(--fg-3);font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;
+}
+.hero-aside .stage-big{
+  display:flex;align-items:baseline;gap:0.5vw;
+}
+.hero-aside .stage-num{
+  font-size:5.5vw;font-weight:800;color:var(--accent-deep);
+  letter-spacing:-0.045em;line-height:1;
+}
+.hero-aside .stage-of{
+  font-size:1.6vw;color:var(--fg-3);font-weight:500;
+  letter-spacing:-0.02em;
+}
+.hero-aside .stage-info{
+  font-size:1vw;font-weight:600;color:var(--fg);margin-top:0.2vh;
+}
+
+/* FUND SPLIT — pastel block segments */
+.split{
+  display:flex;height:7vh;
+}
+.seg{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 1.3vw;min-width:0;position:relative;
+}
+.seg .nm{
+  font-size:0.72vw;letter-spacing:0.14em;text-transform:uppercase;
+  font-weight:700;opacity:0.7;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.seg .amt{
+  font-size:1.35vw;font-weight:800;letter-spacing:-0.02em;
+  margin-top:0.2vh;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.seg.s1{background:var(--sage)}
+.seg.s2{background:var(--coral)}
+.seg.s3{background:var(--butter)}
+.seg.s4{background:var(--blue)}
+
+/* EMPLOYEES MATRIX 3×9 */
+.emp-section{display:flex;flex-direction:column;gap:0.7vh}
+.emp-head{display:flex;justify-content:space-between;align-items:baseline}
+.emp-head h2{
+  font-size:0.82vw;color:var(--fg-3);font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;
+}
+.emp-head .meta{font-size:0.85vw;color:var(--fg-2)}
+.emp-head .meta b{color:var(--fg);font-weight:600}
+.emp-grid{
+  flex:1;min-height:0;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0 2.8vw;
+}
+.emp-col{display:flex;flex-direction:column;justify-content:space-between}
+.row{
+  display:grid;grid-template-columns:2vw 1fr auto;
+  column-gap:0.8vw;align-items:center;
+  padding:0.5vh 0;
+  border-bottom:1px solid var(--rule);
+  position:relative;
+}
+.row::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;
+  height:1.5px;background:var(--accent);
+  transform:scaleX(var(--bar,0));transform-origin:left;
+  transition:transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  opacity:0.45;
+}
+.row .pos{
+  font-size:0.85vw;color:var(--fg-4);
+  font-weight:600;font-feature-settings:"tnum" 1;
+}
+.row .who{display:flex;flex-direction:column;gap:0.05vh;min-width:0}
+.row .name{
+  font-size:1.1vw;font-weight:600;letter-spacing:-0.005em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.row .role{
+  font-size:0.7vw;color:var(--fg-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.row .tot{
+  font-size:1.15vw;font-weight:700;letter-spacing:-0.012em;
+  font-feature-settings:"tnum" 1;text-align:right;white-space:nowrap;
+}
+.row.top-1 .pos{color:var(--accent-deep)}
+.row.top-1 .tot{color:var(--accent-deep)}
+.row.top-1 .name{font-weight:700}
+.row.top-3 .pos{color:var(--accent)}
+.row.zero{opacity:0.45}
+
+/* BOTTOM */
+.bottom{
+  display:grid;grid-template-columns:1fr 1.3fr;
+  gap:3vw;
+  padding-top:0.7vh;
+  border-top:1px solid var(--rule);
+}
+.bot h2{
+  font-size:0.78vw;color:var(--fg-3);font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;
+  margin-bottom:0.6vh;
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.bot h2 .meta{
+  color:var(--fg-2);letter-spacing:0;text-transform:none;font-weight:500;
+}
+.bot h2 .meta b{color:var(--fg);font-weight:700}
+
+.mgmt-row{
+  display:grid;grid-template-columns:1fr auto auto;
+  gap:1vw;align-items:center;padding:0.3vh 0;
+}
+.mgmt-row .nm{display:flex;flex-direction:column;gap:0.05vh}
+.mgmt-row .nm .name{font-size:0.98vw;font-weight:600}
+.mgmt-row .nm .role{font-size:0.7vw;color:var(--fg-3)}
+.kpi{display:flex;gap:0.3vw}
+.kpi .d{
+  width:0.7vw;height:0.7vw;border-radius:50%;
+  background:var(--sage-deep);
+}
+.kpi .d.y{background:var(--butter-deep)}
+.kpi .d.r{background:var(--accent)}
+.mgmt-row .pay{
+  font-size:1.05vw;font-weight:700;letter-spacing:-0.01em;
+  font-feature-settings:"tnum" 1;min-width:6vw;text-align:right;
+}
+
+.innov-row{
+  display:grid;grid-template-columns:auto 1fr auto;
+  gap:1vw;align-items:center;padding:0.3vh 0;
+}
+.innov-row .level{
+  font-size:0.7vw;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--butter-deep);
+  padding:0.3vh 0.7vw;border:1px solid var(--butter-deep);
+}
+.innov-row .body{display:flex;flex-direction:column;gap:0.05vh;min-width:0}
+.innov-row .who{font-size:0.98vw;font-weight:600}
+.innov-row .who .role{
+  color:var(--fg-3);font-weight:400;font-size:0.7vw;margin-left:0.5vw;
+}
+.innov-row .desc{
+  font-size:0.82vw;color:var(--fg-2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.innov-row .pay{
+  font-size:1.05vw;font-weight:700;letter-spacing:-0.01em;
+  font-feature-settings:"tnum" 1;min-width:6vw;text-align:right;
+}
+.innov-empty{
+  font-size:0.9vw;color:var(--fg-4);font-style:italic;padding:0.5vh 0;
+}
+
+@media (max-aspect-ratio: 4/3){
+  .bf-number{font-size:8vw}
+  .bf-number .cur{font-size:4vw}
+  .hero-aside .stage-num{font-size:4vw}
+}
+@media (min-width: 2400px){
+  .tv{padding:2vh 2.5vw}
+}
+</style>
+</head>
+<body>
+
+<div class="tv">
+
+  <header class="head">
+    <div class="l">
+      <span class="mark"></span>
+      <span class="brand">TRUCKSTOP Z-463</span>
+      <span class="sub" id="periodHead">Кафе · Бонусный фонд · Апрель 2026</span>
+    </div>
+    <div class="r">
+      <div class="stat"><span class="pulse"></span><span id="liveLabel">Live</span></div>
+      <div class="stat">Обновлено <b id="updatedAgo">только что</b></div>
+      <div class="stat">Следующее <b id="nextAt">через 60 мин</b></div>
+    </div>
+  </header>
+
+  <section class="econ" id="econ"></section>
+
+  <section class="stages" id="stages"></section>
+
+  <section class="hero">
+    <div class="bf-block">
+      <div class="bf-label">Бонусный фонд месяца</div>
+      <div class="bf-number"><span id="bfValue">2 242 996</span><span class="cur">₸</span></div>
+      <div class="bf-foot">
+        <span><b id="empCountInline">27</b> сотрудников</span>
+        <span class="delta">Улучшение <b id="impValue">+22.9%</b></span>
+        <span>Среднее: <b id="avgValue">70 803 ₸</b></span>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <div class="ksmall">Текущая ступень</div>
+      <div class="stage-big">
+        <span class="stage-num" id="stageNum">5</span>
+        <span class="stage-of">из 6</span>
+      </div>
+      <div class="stage-info" id="stageInfo">коэффициент 0.35 × ДВП</div>
+    </div>
+  </section>
+
+  <section class="split" id="split"></section>
+
+  <section class="emp-section">
+    <div class="emp-head">
+      <h2>Сотрудники · Бонус за месяц</h2>
+      <div class="meta">Распределено <b id="distSum">1 911 687 ₸</b> · 10% удержано в резерв</div>
+    </div>
+    <div class="emp-grid" id="empGrid"></div>
+  </section>
+
+  <section class="bottom">
+    <div class="bot">
+      <h2>Управление · 5% БФ <span class="meta">всего <b id="mgmtTotal">112 150 ₸</b></span></h2>
+      <div id="mgmtList"></div>
+    </div>
+    <div class="bot">
+      <h2>Инновации · 15% БФ <span class="meta">распределено <b id="innovDist">50 000 ₸</b> · резерв <b id="innovRes">286 449 ₸</b></span></h2>
+      <div id="innovList"></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — подключение Google Sheets
+   ============================================================ */
+const CONFIG = {
+  SHEET_ID: "1okoktKxsoPDX7K3q8nG-vPLxCKSyLmud",
+  SHEETS: {
+    calc:    "БФ_Калькулятор",
+    summary: "Итог",
+    mgmt:    "Управление_5%",
+    innov:   "Инновации_15%"
+  },
+  REFRESH_MIN: 60
+};
+
+const FALLBACK = {
+  period:"Апрель 2026",
+  revenue:50716769.5, cogs:16310587.53, fot:10979460,
+  other:4526272.10, tax:1880007.78, base:2.55,
+  vp:34406181.97, op:17020442.09, pm:3.1337,
+  improvement:0.2289, dvp:6408558.97,
+  stage:5, stageRate:0.35, bf:2242995.64,
+  splits:{command:1121497.82, personal:672898.69, mgmt:112149.78, innov:336449.35},
+  employees:[
+    ["Балжан","администратор",312,61613,30522,33645,0],
+    ["Мейржан","кассир кафе",238,39167,18440,0,0],
+    ["Меруерт","кассир кафе",205,33736,17869,0,0],
+    ["Жаслан","шеф-повар",312,66748,24418,33645,0],
+    ["Миша","повар-восточник",412,67801,37524,0,0],
+    ["Акерке","су-шеф",307,55574,28531,0,0],
+    ["Дима","су-шеф",271,49057,20148,0,0],
+    ["Айбек","повар-универсал",160,26330,13171,0,0],
+    ["Перизат","повар-универсал",300,49370,24696,0,0],
+    ["Клара","повар-универсал",290,47724,26951,0,0],
+    ["Гавхар","повар-универсал",281,46243,25854,0,0],
+    ["Арман","повар-универсал",226,37192,18792,0,0],
+    ["Нуржамал","пекарь",286,47066,26314,0,50000],
+    ["Чингиз","мясник",198,32584,16735,0,0],
+    ["Зинеп","тех.персонал",337,44367,31319,0,0],
+    ["Дина","тех.персонал",321,42260,29832,0,0],
+    ["Зарина","тех.персонал",366,48185,47262,0,0],
+    ["Жанымгуль","тех.персонал",210,27647,20544,0,0],
+    ["Камила","тех.персонал",338,44499,43646,0,0],
+    ["Ильяс","раннер",124,17345,10948,0,0],
+    ["Максим","раннер",122,17065,10771,0,0],
+    ["Асхат","закуп",312,43643,36932,0,0],
+    ["Арыстан","Кассир/раннер",38,5628,3717,0,0],
+    ["Айнур","раннер",352,49238,32386,0,0],
+    ["Дильшот","тандырщик",204,28536,7903,0,0],
+    ["Аблай","закуп",312,43643,33238,0,0],
+    ["Нурмухамбет","раннер",352,49238,34435,0,0]
+  ].map(([name,role,hours,command,personal,mgmt,innov])=>({
+    name,role,hours,command,personal,mgmt,innov,
+    total:command+personal+mgmt+innov
+  })),
+  mgmt:[
+    {role:"Управляющий комплексом",name:"Гаухар",kpi:["G","G","G","G","G"],pay:44860},
+    {role:"Управляющий кафе",      name:"Балжан",kpi:["G","G","G","G","G"],pay:33645},
+    {role:"Шеф-повар",             name:"Жаслан",kpi:["G","G","G","G","G"],pay:33645}
+  ],
+  innov:[
+    {name:"Нуржамал", role:"пекарь", desc:"Огонёк, перекус в дорогу", level:3, pay:50000}
+  ]
+};
+
+const STAGES = [
+  {n:"1",   label:"ниже базы", rate:"нет"},
+  {n:"1.5", label:"ПМ = базе", rate:"50K"},
+  {n:"2",   label:"0–5%",      rate:"20%"},
+  {n:"3",   label:"5–10%",     rate:"25%"},
+  {n:"4",   label:"10–20%",    rate:"30%"},
+  {n:"5",   label:"20–30%",    rate:"35%"},
+  {n:"6",   label:"свыше 30%", rate:"40%"}
+];
+
+const STAGE_RATES = {1:0, "1.5":0.0001, 2:0.20, 3:0.25, 4:0.30, 5:0.35, 6:0.40};
+
+const fmt = n => isNaN(n)||n==null ? "·" : Math.round(n).toLocaleString("ru-RU").replace(/,/g," ");
+const fmtPct = n => (n>=0?"+":"")+(n*100).toFixed(1)+"%";
+function relTime(ms){
+  const s=Math.round(ms/1000);
+  if(s<60) return "только что";
+  const m=Math.round(s/60); if(m<60) return m+" мин";
+  const h=Math.round(m/60); if(h<24) return h+" ч";
+  return Math.round(h/24)+" дн";
+}
+
+function render(d){
+  document.getElementById("periodHead").textContent = "Кафе · Бонусный фонд · " + d.period;
+
+  // Economics ribbon
+  const econItems = [
+    {k:"Выручка",     v:fmt(d.revenue)+" ₸"},
+    {k:"Валовая ВП",  v:fmt(d.vp)+" ₸"},
+    {k:"Опер. ОП",    v:fmt(d.op)+" ₸"},
+    {k:"ПМ факт / база", v:d.pm.toFixed(2)+" / "+d.base.toFixed(2)},
+    {k:"ДВП",         v:fmt(d.dvp)+" ₸"},
+    {k:"ВП к базе",   v:fmtPct(d.improvement), cls:"delta"}
+  ];
+  document.getElementById("econ").innerHTML = econItems.map(i =>
+    `<div class="e ${i.cls||''}"><div class="k">${i.k}</div><div class="v">${i.v}</div></div>`
+  ).join("");
+
+  // Stage pills
+  document.getElementById("stages").innerHTML = STAGES.map(s=>{
+    const cur = String(d.stage) === s.n;
+    return `<div class="tile ${cur?'current':''}">
+      <div class="num">${s.n}</div>
+      <div class="label">${s.label}</div>
+      <div class="rate">${s.rate}</div>
+    </div>`;
+  }).join("");
+
+  // Hero
+  document.getElementById("bfValue").textContent = fmt(d.bf);
+  document.getElementById("empCountInline").textContent = d.employees.length;
+  document.getElementById("impValue").textContent = fmtPct(d.improvement);
+  const dist = d.employees.reduce((s,e)=>s+e.total,0);
+  document.getElementById("avgValue").textContent = fmt(dist/d.employees.length)+" ₸";
+  document.getElementById("stageNum").textContent = d.stage;
+  document.getElementById("stageInfo").textContent = `коэффициент ${d.stageRate.toFixed(2)} × ДВП`;
+
+  // Fund split
+  const segs = [
+    {cls:"s1",name:"Командная 50%",val:d.splits.command},
+    {cls:"s2",name:"Личная 30%",   val:d.splits.personal},
+    {cls:"s3",name:"Инновации 15%",val:d.splits.innov},
+    {cls:"s4",name:"Управление 5%",val:d.splits.mgmt}
+  ];
+  document.getElementById("split").innerHTML = segs.map(s=>
+    `<div class="seg ${s.cls}" style="flex:${s.val}">
+       <div class="nm">${s.name}</div>
+       <div class="amt">${fmt(s.val)} ₸</div>
+     </div>`
+  ).join("");
+
+  // Employees 3×9
+  const sorted = [...d.employees].sort((a,b)=>b.total-a.total);
+  const max = sorted[0].total;
+  const cols = [[],[],[]];
+  sorted.forEach((e,i)=>cols[Math.floor(i/9)].push({...e,rank:i+1}));
+
+  document.getElementById("empGrid").innerHTML = cols.map(col=>
+    `<div class="emp-col">${col.map(e=>`
+      <div class="row ${e.rank===1?'top-1':e.rank<=3?'top-3':''} ${e.total===0?'zero':''}" style="--bar:${e.total/max}">
+        <div class="pos">${String(e.rank).padStart(2,"0")}</div>
+        <div class="who">
+          <div class="name">${e.name}</div>
+          <div class="role">${e.role} · ${e.hours}ч</div>
+        </div>
+        <div class="tot">${fmt(e.total)}</div>
+      </div>
+    `).join("")}</div>`
+  ).join("");
+  document.getElementById("distSum").textContent = fmt(dist)+" ₸";
+
+  // Mgmt
+  const mgmtTotal = d.mgmt.reduce((s,m)=>s+m.pay,0);
+  document.getElementById("mgmtTotal").textContent = fmt(mgmtTotal)+" ₸";
+  document.getElementById("mgmtList").innerHTML = d.mgmt.map(m=>`
+    <div class="mgmt-row">
+      <div class="nm">
+        <div class="name">${m.name}</div>
+        <div class="role">${m.role}</div>
+      </div>
+      <div class="kpi">${m.kpi.map(k=>`<div class="d ${k==='Y'||k==='Жёлтый'?'y':k==='R'||k==='Красный'?'r':''}"></div>`).join("")}</div>
+      <div class="pay">${fmt(m.pay)} ₸</div>
+    </div>
+  `).join("");
+
+  // Innovations
+  const innovDist = d.innov.reduce((s,i)=>s+i.pay,0);
+  const innovRes = d.splits.innov - innovDist;
+  document.getElementById("innovDist").textContent = fmt(innovDist)+" ₸";
+  document.getElementById("innovRes").textContent = fmt(innovRes)+" ₸";
+  const innovEl = document.getElementById("innovList");
+  if (d.innov.length === 0){
+    innovEl.innerHTML = `<div class="innov-empty">В этом месяце принятых инноваций нет.</div>`;
+  } else {
+    innovEl.innerHTML = d.innov.map(it=>`
+      <div class="innov-row">
+        <div class="level">Ур. ${it.level}</div>
+        <div class="body">
+          <div class="who">${it.name}<span class="role">${it.role}</span></div>
+          <div class="desc">${it.desc}</div>
+        </div>
+        <div class="pay">${fmt(it.pay)} ₸</div>
+      </div>
+    `).join("");
+  }
+}
+
+/* Google Sheets loader */
+async function fetchSheet(name){
+  const url = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(name)}`;
+  const res = await fetch(url);
+  const text = await res.text();
+  const json = JSON.parse(text.match(/\{.*\}/s)[0]);
+  return json.table.rows.map(r => r.c.map(c => c ? (c.v ?? null) : null));
+}
+
+async function loadFromSheets(){
+  if (!CONFIG.SHEET_ID) return null;
+  try{
+    const [calc, summary, mgmt, innov] = await Promise.all([
+      fetchSheet(CONFIG.SHEETS.calc),
+      fetchSheet(CONFIG.SHEETS.summary),
+      fetchSheet(CONFIG.SHEETS.mgmt),
+      fetchSheet(CONFIG.SHEETS.innov)
+    ]);
+    return parseSheets({calc, summary, mgmt, innov});
+  }catch(e){
+    console.warn("Sheets fetch failed:", e);
+    return null;
+  }
+}
+
+function parseSheets({calc, summary, mgmt, innov}){
+  const find = label => {
+    const row = calc.find(r => r && r[1] && String(r[1]).includes(label));
+    return row ? Number(row[2]) : null;
+  };
+  let period = "Текущий месяц";
+  const pRow = calc.find(r => r && r[1] && String(r[1]).includes("Период"));
+  if (pRow && pRow[2]){
+    const num = Number(pRow[2]);
+    if (num){
+      const month = Math.floor(num);
+      const year = Math.round((num - month) * 10000);
+      const months = ["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+      period = (months[month]||"") + " " + year;
+    }
+  }
+  const stageRow = calc.find(r => r && r[1] && String(r[1]).includes("Ступень (автоматически)"));
+  const stage = stageRow ? Number(String(stageRow[2]).match(/[\d.]+/)?.[0]) : 5;
+
+  const d = {
+    period,
+    revenue:find("Выручка"), cogs:find("Себестоимость"),
+    fot:find("ФОТ"), other:find("Другие расходы"), tax:find("Налоги"),
+    base:find("База"), vp:find("ВП = ВЫР"), op:find("ОП = ВП"),
+    pm:find("ПМ факт"), improvement:find("% улучшения"), dvp:find("ДВП"),
+    stage, stageRate:find("коэффициент")||0.35, bf:find("БФ = У"),
+    splits:{
+      command:find("Командная часть"), personal:find("Личная часть"),
+      mgmt:find("Фонд управления"), innov:find("Фонд инноваций")
+    }
+  };
+
+  d.employees = summary
+    .filter(r => r && r[1] && r[1] !== "Сотрудник" && r[1] !== "ИТОГО" && r[2])
+    .map(r => ({
+      name:r[1], role:r[2], hours:0,
+      command:Number(r[3])||0, personal:Number(r[4])||0,
+      mgmt:Number(r[5])||0, innov:Number(r[6])||0,
+      total:Number(r[7])||0
+    }));
+
+  d.mgmt = mgmt
+    .filter(r => r && r[1] && r[2] && r[1] !== "Роль" && r[1] !== "ИТОГО")
+    .map(r => ({
+      role:r[1], name:r[2],
+      kpi:[r[5],r[6],r[7],r[8],r[9]].map(k=>k||"G"),
+      pay:Number(r[12])||0
+    }));
+
+  d.innov = innov
+    .filter(r => r && r[1] && r[3] && r[1] !== "Сотрудник")
+    .map(r => ({
+      name:r[1], role:r[2]||"",
+      desc:r[3], level:Number(r[4])||1,
+      pay:Number(r[7])||0
+    }));
+
+  return d;
+}
+
+/* auto refresh */
+let lastUpdate = Date.now();
+function updateClock(){
+  document.getElementById("updatedAgo").textContent = relTime(Date.now() - lastUpdate);
+  const left = Math.max(0, lastUpdate + CONFIG.REFRESH_MIN*60*1000 - Date.now());
+  const min = Math.ceil(left/60000);
+  document.getElementById("nextAt").textContent = min>0 ? `через ${min} мин` : "сейчас";
+}
+async function refresh(){
+  const liveLabel = document.getElementById("liveLabel");
+  liveLabel.textContent = "Обновляется…";
+  const fresh = await loadFromSheets();
+  const data = fresh || FALLBACK;
+  render(data);
+  lastUpdate = Date.now();
+  liveLabel.textContent = fresh ? "Live" : "Demo";
+  updateClock();
+}
+refresh();
+setInterval(refresh, CONFIG.REFRESH_MIN*60*1000);
+setInterval(updateClock, 30000);
+
+if ('wakeLock' in navigator){
+  let lock = null;
+  const reqLock = () => navigator.wakeLock.request('screen').then(l=>lock=l).catch(()=>{});
+  reqLock();
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && !lock) reqLock();
+  });
+}
+</script>
+</body>
+</html>
